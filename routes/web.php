@@ -19,3 +19,16 @@ Route::get('/', function () {
 });
 
 Route::get('/users',[UserController::class,'home']);
+
+Route::get('/admin/register',[UserController::class,'adminRegister']);
+Route::post('/admin/register',[UserController::class,'adminStore']);
+Route::get('/admin/login',[UserController::class,'adminLogin']);
+Route::post('/admin/login',[UserController::class,'adminAuthenticate']);
+Route::get('/admin/dashboard',[UserController::class,'adminDashboard']);
+Route::get('/admin/logout',[UserController::class,'adminlogout']);
+Route::get('/emp/create',[UserController::class,'empCreate']);
+
+
+Route::get('/employee/login',[UserController::class,'empLogin']);
+Route::post('/employee/login',[UserController::class,'empAuthenticate']);
+Route::get('/employee/dashboard',[UserController::class,'empDashboard']);

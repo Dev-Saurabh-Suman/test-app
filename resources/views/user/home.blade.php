@@ -9,7 +9,8 @@
 
 	<h1>Welcome To The Users Home Page</h1><br><br>
 	<h3>For Admin Login Click here<a href="">Login</a></h3><br>
-	<h3>For Employee Login Click here<a href="">Login</a></h3><br>
+	<h3>For Employee Login Click here<a href="{{url('/employee/login')}}">Login</a></h3><br>
+	<h3>New Admin Register Here<a href="{{url('/admin/register')}}">Register</a></h3><br>
 
 </body>
 </html>
