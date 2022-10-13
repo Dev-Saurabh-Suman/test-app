@@ -22,4 +22,5 @@
     <link rel="stylesheet" href="{{url('assets/css/demo_1/style.css')}}">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>

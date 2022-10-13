@@ -5,7 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash; 
+use App\Models\Salary;
+use App\Models\Project;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -35,10 +37,11 @@ class UserController extends Controller
 
     public function adminAuthenticate(Request $request)
     {
-        $credentials = $request->only('email','password');
-        if(\Auth::attempt($credentials))
-        {
+        $credentials = $request->only('email', 'password');
+        if (\Auth::attempt($credentials)) {
             return redirect('/admin/dashboard');
+        } else {
+            return redirect('/admin/login');
         }
     }
 
@@ -53,8 +56,35 @@ class UserController extends Controller
         return redirect('/admin/login');
     }
 
+    public function empIndex(User $user)
+    {
+        $user = User::where('role_id', 2)->get();
+        return view('user.index', ['users' => $user]);
+    }
+
     public function empCreate()
     {
         return view('emp.create');
+    }
+
+    public function empstore(Request $request)
+    {
+        $emp['name'] = $request->name;
+        $emp['email'] = $request->email;
+        $emp['password'] = Hash::make($request->password);
+        $emp['role_id'] = $request->role_id;
+
+        $sal['basic'] = $request->basic;
+        $sal['hra'] = $request->hra;
+        $sal['da'] = $request->da;
+        $sal['total'] = $request->total;
+
+        $employee = User::create($emp);
+        $sal['user_id'] = $employee->id;
+
+        $salary = Salary::create($sal);
+
+
+        return redirect('/employee/index');
     }
 }

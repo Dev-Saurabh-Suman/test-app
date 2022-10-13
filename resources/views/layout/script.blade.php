@@ -11,3 +11,5 @@
     <script src="{{url('assets/js/demo_1/dashboard.js')}}"></script>
     <!-- End custom js for this page-->
     <script src="{{url('assets/js/shared/jquery.cookie.js')}}" type="text/javascript"></script>
+
+    

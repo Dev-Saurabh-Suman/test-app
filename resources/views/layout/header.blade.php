@@ -12,9 +12,9 @@
                       <li><a href="#">Historic market data</a></li>
                     </ul>
                     <ul class="quick-links ml-auto">
-                      <li><a href="#">Settings</a></li>
-                      <li><a href="#">Analytics</a></li>
-                      <li><a href="#">Watchlist</a></li>
+                      <li><a href="#">Employees List</a></li>
+                      <li><a href="#">Admin List</a></li>
+                      <li><a href="#">Project List</a></li>
                     </ul>
                   </div>
                 </div>
